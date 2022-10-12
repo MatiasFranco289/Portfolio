@@ -132,4 +132,9 @@
     .logoSurname{
         width: 280px;
     }
+
+    .subTitle{
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
 }

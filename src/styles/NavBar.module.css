@@ -1,0 +1,11 @@
+.link{
+    margin-right: .75rem;
+    margin-left: .75rem;
+    color: white;
+    transition-duration: 300ms;
+}
+
+.link:hover{
+    transform: scale(1.1);
+    text-shadow: 0px 0px 20px white;
+}

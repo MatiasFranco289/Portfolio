@@ -25,7 +25,7 @@ export default function Title(){
             </svg>
         </div>
 
-        <h2 className="text-white text-2xl font-medium lg:text-4xl">FullStack web developer</h2>
+        <h2 className={styles.subTitle}>FullStack web developer</h2>
     </div>
     );
 }

@@ -16,7 +16,7 @@ module.exports = {
         'ska10': '#AAA6CA',
       },
       animation: {
-        appear: 'appear 1s ease-in-out forwards',
+        appear: 'appear 2s ease-in-out forwards',
       },
       keyframes: {
         appear: {
