@@ -1,8 +1,14 @@
-.link{
+.link, .link_active{
     margin-right: .75rem;
     margin-left: .75rem;
-    color: white;
     transition-duration: 300ms;
+    cursor: pointer;
+    color: white;
+}
+
+.link_active{
+    color: #AAA6CA;
+    pointer-events: none;
 }
 
 .link:hover{

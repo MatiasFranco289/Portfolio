@@ -16,12 +16,13 @@ module.exports = {
         'ska10': '#AAA6CA',
       },
       animation: {
-        appear: 'appear 2s ease-in-out forwards',
+        appear: 'appear 2s ease-in-out forwards 5s',
       },
       keyframes: {
         appear: {
           from: {opacity: 0},
-          to: {opacity: 1}
+          to: {
+          opacity: 1}
         }
       }
     },

@@ -5,6 +5,12 @@
     margin-right: 45px;
 }
 
+.logoDisabled{
+    width: 486px;
+    margin-right: 45px;
+    animation: unfill .5s ease forwards;
+}
+
 .logo path:nth-child(1){
     stroke-dasharray: 649.9840087890625;
     stroke-dashoffset: 649.9840087890625;
@@ -41,9 +47,50 @@
     animation: line-anim 2s ease forwards 1.5s;
 }
 
+.logoDisabled path:nth-child(1){
+    stroke-dasharray: 649.9840087890625;
+    stroke-dashoffset: 0;
+    animation: line-anim-reverse-m 2s ease forwards;
+}
+
+.logoDisabled path:nth-child(2){
+    stroke-dasharray: 421.152099609375;
+    stroke-dashoffset: 0;
+    animation: line-anim-reverse-a 2s ease forwards .1s;
+}
+
+.logoDisabled path:nth-child(3){
+    stroke-dasharray: 318.719970703125;
+    stroke-dashoffset: 0;
+    animation: line-anim-reverse-t 2s ease forwards .2s;
+}
+
+.logoDisabled path:nth-child(4){
+    stroke-dasharray: 223.48797607421875;
+    stroke-dashoffset: 0;
+    animation: line-anim-reverse-i 2s ease forwards .3s;
+}
+
+.logoDisabled path:nth-child(5){
+    stroke-dasharray: 421.1520080566406;
+    stroke-dashoffset: 0;
+    animation: line-anim-reverse-a 2s ease forwards .4s;
+}
+
+.logoDisabled path:nth-child(6){
+    stroke-dasharray: 431.11614990234375;
+    stroke-dashoffset: 0;
+    animation: line-anim-reverse-s 2s ease forwards .5s;
+}
+
 .logoSurname{
     animation: fill .5s ease forwards 4.3s;
     width: 532px;
+}
+
+.logoSurnameDisabled{
+    width: 532px;
+    animation: unfill .5s ease forwards;
 }
 
 .logoSurname path:nth-child(1){
@@ -82,8 +129,43 @@
     animation: line-anim 2s ease forwards 3.3s;
 }
 
-.subTitle{
-   /*  text-white text-4xl mt-3 animate-appear duration-[5000ms] */
+.logoSurnameDisabled path:nth-child(1){
+    stroke-dasharray: 351.488037109375;
+    stroke-dashoffset: 0;
+    animation: line-anim-reverse-f 2s ease forwards .6s;
+}
+
+.logoSurnameDisabled path:nth-child(2){
+    stroke-dasharray: 463.4035949707031;
+    stroke-dashoffset: 0;
+    animation: line-anim-reverse-r 2s ease forwards .7s;
+}
+
+.logoSurnameDisabled path:nth-child(3){
+    stroke-dasharray: 421.1520690917969;
+    stroke-dashoffset: 0;
+    animation: line-anim-reverse-a 2s ease forwards .8s;
+}
+
+.logoSurnameDisabled path:nth-child(4){
+    stroke-dasharray: 511.427001953125;
+    stroke-dashoffset: 0;
+    animation: line-anim-reverse-n 2s ease forwards .9s;
+}
+
+.logoSurnameDisabled path:nth-child(5){
+    stroke-dasharray: 431.21429443359375;
+    stroke-dashoffset: 0;
+    animation: line-anim-reverse-c 2s ease forwards 1s;
+}
+
+.logoSurnameDisabled path:nth-child(6){
+    stroke-dasharray: 450.261474609375;
+    stroke-dashoffset: 0;
+    animation: line-anim-reverse-o 2s ease forwards 1.1s;
+}
+
+.subTitle, .subTitleDisabled{
    color: white;
    font-size: 2.25rem; 
    line-height: 2.5rem;
@@ -91,6 +173,77 @@
    animation:appear 1s ease forwards 4.8s;
    opacity: 0;
 }
+
+.subTitle{
+    animation:appear 1s ease forwards 4.8s;
+}
+
+.subTitleDisabled{
+    opacity: 1;
+    animation:disappear 1s ease forwards 2.8s;
+}
+
+@keyframes line-anim-reverse-m{
+    to{
+        stroke-dashoffset: 649.9840087890625;
+    }
+}
+
+@keyframes line-anim-reverse-a{
+    to{
+        stroke-dashoffset: 421.152099609375;
+    }
+}
+
+@keyframes line-anim-reverse-t{
+    to{
+        stroke-dashoffset: 318.719970703125;
+    }
+}
+
+@keyframes line-anim-reverse-i{
+    to{
+        stroke-dashoffset: 223.48797607421875;
+    }
+}
+
+@keyframes line-anim-reverse-s{
+    to{
+        stroke-dashoffset: 431.11614990234375;
+    }
+}
+
+@keyframes line-anim-reverse-f{
+    to{
+        stroke-dashoffset: 351.488037109375;
+    }
+}
+
+@keyframes line-anim-reverse-r{
+    to{
+        stroke-dashoffset: 463.4035949707031;
+    }
+}
+
+@keyframes line-anim-reverse-n{
+    to{
+        stroke-dashoffset: 511.427001953125;
+    }
+}
+
+@keyframes line-anim-reverse-c{
+    to{
+        stroke-dashoffset: 431.21429443359375;
+    }
+}
+
+@keyframes line-anim-reverse-o{
+    to{
+        stroke-dashoffset: 450.261474609375;
+    }
+}
+
+
 
 @keyframes line-anim{
     to{
@@ -107,6 +260,15 @@
     }
 }
 
+@keyframes unfill{
+    from{
+        fill: white;
+    }
+    to{
+        fill:transparent;
+    }
+}
+
 @keyframes appear{
     from{
         opacity: 0;
@@ -116,8 +278,20 @@
     }
 }
 
+@keyframes disappear{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
 @media(max-width:1536px){
     .logo{
+        margin-bottom: 20px;
+    }
+    .logoDisabled{
         margin-bottom: 20px;
     }
 }
@@ -129,11 +303,26 @@
         margin-bottom: 0;
     }
 
+    .logoDisabled{
+        width: 280px;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
     .logoSurname{
         width: 280px;
     }
 
+    .logoSurnameDisabled{
+        width: 280px;
+    }
+
     .subTitle{
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    .subTitleDisabled{
         font-size: 1.5rem;
         line-height: 2rem;
     }

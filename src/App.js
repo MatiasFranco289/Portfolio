@@ -1,13 +1,10 @@
 import './App.css';
-import Landing from './components/Landing';
-import {Route, Routes} from 'react-router-dom';
+import CustomRouter from './components/CustomRouter';
 
 function App() {
-  return (
-    <Routes>
-      <Route path='/' element={<Landing/>}/>
-    </Routes>
-  );
+  return(
+    <CustomRouter/>
+  )
 }
 
 export default App;

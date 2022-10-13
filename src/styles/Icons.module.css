@@ -1,0 +1,97 @@
+.iconsContainer,.iconsContainerDisabled, .invertedIconsContainer, .invertedIconsContainerDisabled{
+    color: white;
+    display: flex;
+    position:absolute;
+    left: 0;
+    margin-left: 1.5rem;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    opacity: 0;
+}
+
+.iconsContainer{
+    bottom: 0;
+    animation: fall 1s ease-in forwards;
+    animation-delay: 4s;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.iconsContainerDisabled{
+    bottom: 0;
+    opacity: 1;
+    pointer-events: none;
+    animation: iconsOut .5s ease-out forwards;
+}
+
+.invertedIconsContainer{
+    top: 0;
+    transform: scaleY(-100%);
+    filter: blur(3px);
+    animation: fallUp 1s ease-in forwards;
+    animation-delay: 4s;
+}
+
+.invertedIconsContainerDisabled{
+    top: 0;
+    opacity: 1;
+    filter: blur(3px);
+    transform: scaleY(-100%);
+    pointer-events: none;
+    animation: iconsOutInverted .5s ease-out forwards;
+}
+
+@media(min-width:1024px){
+    .iconsContainer{
+        font-size: 3.75rem;
+        line-height: 1;
+    }
+    .iconsContainerDisabled{
+        font-size: 3.75rem;
+        line-height: 1;
+    }
+    .invertedIconsContainer{
+        font-size: 3.75rem;
+        line-height: 1;
+    }
+    .invertedIconsContainerDisabled{
+        font-size: 3.75rem;
+        line-height: 1;
+    }
+}
+
+
+@keyframes fall{
+    0%{
+        opacity: 0;
+        bottom: 20%;
+    }
+    100%{
+        bottom: 0;
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@keyframes fallUp{
+    0%{
+        opacity: 0;
+        top: 20%;
+    }
+    100%{
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes iconsOut{
+    100%{
+        bottom:-4rem;
+    }
+}
+
+@keyframes iconsOutInverted{
+    100%{
+        top: -4rem;
+    }
+}
