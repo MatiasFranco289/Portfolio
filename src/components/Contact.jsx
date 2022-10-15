@@ -2,6 +2,7 @@ import React, {useState } from "react";
 import emailjs from "emailjs-com";
 import {AiOutlineLoading} from 'react-icons/ai';
 import WaterDrop from "./WaterDrop";
+import styles from '../styles/Contact.module.css';
 
 export default function Contact({unLoading}){
     const [inputs, setInputs] = useState({name:'',email:'',msg:''});
@@ -61,8 +62,7 @@ export default function Contact({unLoading}){
             });
         }
         else{
-
-            emailjs.sendForm('service_zj9eop7','template_5y4e1mt',e.target,'Iji7pzeCHqYDF3YL3')
+            emailjs.sendForm(process.env.REACT_APP_MAIL_KEY,process.env.REACT_APP_MAIL_TEMPLATE,e.target,process.env.REACT_APP_MAIL_API_KEY)
             .then(() => {
                 setLoading(false);
 
@@ -124,9 +124,7 @@ export default function Contact({unLoading}){
         <div className="h-4/6 w-full flex flex-col flex-nowrap justify-between 
         flex-wrap relative md:flex-row overflow-hidden min-h-[262px] shadow-lg 
         shadow-ska7 z-10 mt-[80px]">
-            <form onSubmit={(e) => handleSubmit(e)} className="backdrop-blur-[3px] flex flex-col w-[280px]
-            p-3 md:p-6 text-white absolute left-[50%] top-[50%] translate-x-[-50%] sm:w-[400px]
-            translate-y-[-50%] items-center shadow shadow-black md:w-[800px] bg-ska5/50">
+            <form onSubmit={(e) => handleSubmit(e)} className={!unLoading?styles.mainForm:styles.mainFormDisabled}>
                 <WaterDrop/>
                 <h1 className="text-4xl font-bold mb-3">Contacto</h1>
 
@@ -199,10 +197,16 @@ export default function Contact({unLoading}){
         <div className="h-4/6 w-full flex flex-col-reverse flex-nowrap justify-between 
         flex-wrap relative md:flex-row overflow-hidden min-h-[262px]">
             
-            <form className="bg-ska5/50 blur-[5px] flex flex-col w-[280px]
-            p-3 md:p-6 text-white absolute left-[50%] top-[50%] translate-x-[-50%] sm:w-[400px]
-            translate-y-[-50%] items-center shadow shadow-black md:w-[800px] scale-y-[-100%]">
+            {!unLoading?<div className={styles.waterWave}/>:null}
+            {unLoading?<div className={styles.waterWave}/>:null}
 
+            {!unLoading?<div className={styles.waterWave2}/>:null}
+            {unLoading?<div className={styles.waterWave2}/>:null}
+
+            
+
+            <form onSubmit={(e) => handleSubmit(e)} className={!unLoading?styles.mainFormInverted:styles.mainFormInvertedDisabled}>
+                <WaterDrop/>
                 <h1 className="text-4xl font-bold mb-3">Contacto</h1>
 
                 <div className="w-full flex flex-col items-center">
@@ -212,7 +216,7 @@ export default function Contact({unLoading}){
                         <label htmlFor="" className="text-xl mb-1">Nombre</label>
                         <input type="text" id='name' name='name' value={inputs.name} 
                         onChange={(e) => handleFieldChange(e)} 
-                        className="w-5/6 bg-ska6 text-white shadow shadow-ska1 outline-none pl-1"/>
+                        className="w-5/6 bg-ska6 text-white shadow shadow-ska1 outline-none pl-1 pointer-events-none"/>
 
                         {errors.name?
                         <div className="bg-red-700 p-1 font-medium transition-300 mt-2 absolute
@@ -226,7 +230,7 @@ export default function Contact({unLoading}){
                         <label htmlFor="" className="text-xl mb-1">Email</label>
                         <input type="text" id='email' name='name' value={inputs.email} 
                         onChange={(e) => handleFieldChange(e)} 
-                        className="w-5/6 bg-ska6  text-white shadow shadow-ska1 outline-none pl-1"/>
+                        className="w-5/6 bg-ska6  text-white shadow shadow-ska1 outline-none pl-1 pointer-events-none"/>
 
                         {errors.email?
                         <div className="bg-red-700 p-1 font-medium transition-300 mt-2 absolute
@@ -241,7 +245,8 @@ export default function Contact({unLoading}){
                         <textarea type="text" id='msg' name='msg' value={inputs.msg} 
                         onChange={(e) => handleFieldChange(e)} 
                         className="w-5/6 bg-ska6 text-white max-h-[200px]
-                        shadow shadow-ska1 outline-none pl-1 pt-1 h-[10vh] md:h-[20vh]"/>
+                        shadow shadow-ska1 outline-none pl-1 pt-1 h-[10vh] md:h-[20vh]
+                        pointer-events-none"/>
 
                         {errors.msg?
                         <div className="bg-red-700 p-1 font-medium transition-300 mt-2 absolute

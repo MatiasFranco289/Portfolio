@@ -1,0 +1,182 @@
+:root{
+    --maxWave:1000px;
+}
+
+.mainForm, .mainFormDisabled, .mainFormInverted, .mainFormInvertedDisabled{
+    backdrop-filter: 3px;
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    padding: .75rem;
+    color: white;
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    align-items: center;
+    box-shadow: 0 1px 3px 0 black, 0 1px 2px -1px black;
+    background-color: rgb(33, 33, 59,.5);
+    overflow: hidden;
+}
+
+
+.mainForm{
+    animation: appear 2s ease-in forwards;
+}
+
+.mainFormInverted{
+    transform: translate(-50%,-50%) scaleY(-100%);
+    filter: blur(5px);
+    animation: mirrorAppear 2s ease-in forwards;
+}
+
+.mainFormDisabled{
+    animation: formOut 2s ease-in forwards;
+}
+
+
+.mainFormInvertedDisabled{
+    transform: translate(-50%,-50%) scaleY(-100%);
+    filter: blur(5px);
+    animation: formOutInverse 2s ease-in forwards;
+}
+
+
+
+.waterWave, .waterWave2{
+    width: 300px;
+    height: 300px;
+    border-radius: 2000px;
+    position: absolute;
+    left: 50%;
+    top: -70%;
+    transform: translateX(-50%) scaleY(0.8);
+    z-index: 21;
+    box-shadow: inset 0px 0px 30px white;
+    opacity: 0;
+}
+
+.waterWave{
+    animation: wave 2s linear forwards;
+}
+
+.waterWave2{
+    animation: wave 2s linear forwards .5s;
+}
+
+
+@keyframes wave{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        width: var(--maxWave);
+        height: var(--maxWave);
+        top:-95%;
+    }
+}
+
+@keyframes appear{
+    0%{
+        top:100vh;
+    }
+    100%{
+        top: 50%;
+    }
+}
+
+
+@keyframes mirrorAppear{
+    0%{
+        top: -30vh;
+    }
+    100%{
+        top: 50%;
+    }
+}
+
+@keyframes formOut{
+    0%{
+        top: 50%;
+    }
+    100%{
+        top:100vh;
+    }
+}
+
+@keyframes formOutInverse{
+    0%{
+        top: 50%;
+    }
+    100%{
+        top:-30vh;
+    }
+}
+
+
+@media (min-width:640px) {    
+    .mainForm{
+        width: 400px;
+    }
+
+    .mainFormDisabled{
+        width: 400px;
+    }
+
+    .mainFormInverted{
+        width: 400px;
+    }
+
+    .mainFormInvertedDisabled{
+        width: 400px;
+    }
+}
+
+@media (min-width:768px) {
+    .mainForm{
+        padding: 1.5rem;
+        width: 800px;
+    }
+
+    .mainFormDisabled{
+        padding: 1.5rem;
+        width: 800px;
+    }
+
+    .mainFormInverted{
+        padding: 1.5rem;
+        width: 800px;
+    }
+
+    .mainFormInvertedDisabled{
+        padding: 1.5rem;
+        width: 800px;
+    }
+
+    .waterWave{
+        width: 800px;
+        height: 800px;
+    }
+
+    .waterWave2{
+        width: 800px;
+        height: 800px;
+    }
+
+    :root{
+        --maxWave: 1400px;
+    }
+
+    .waterWave{
+        animation: wave 2s linear forwards .7s;
+    }
+
+    .waterWave2{
+        animation: wave 2s linear forwards 1.4s;
+    }
+    
+}

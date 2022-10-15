@@ -1,0 +1,55 @@
+.mainCard{
+    background-color: #21213B;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 200px;
+    margin-bottom: 0.75rem;
+    padding: .75rem;
+    border-radius: 0.5rem;
+    animation: float 3s ease-in-out infinite;
+    height: fit-content;
+    transition-duration: 300ms;
+}
+
+.mainCard:hover{
+    animation-play-state: paused;
+}
+
+@media(min-height:700px){
+    .mainCard{
+        margin-top: 0.75rem;
+    }
+}
+
+@media(min-width:640px){
+    .mainCard{
+        width: 600px;
+    }
+}
+
+@media(min-width:1024px){
+    .mainCard{
+        flex-direction: row;
+        width: 1000px;
+    }
+}
+
+@media(min-width:1280px){
+    .mainCard{
+        width: 1200px;
+    }
+}
+
+@keyframes float{
+    0%{
+        transform: translateY(-2vh);
+    }
+    50%{
+        transform: translateY(2vh);
+    }
+    100%{
+        transform: translateY(-2vh);
+    }
+}

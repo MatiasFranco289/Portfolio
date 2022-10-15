@@ -1,0 +1,47 @@
+.oldPage{
+   background-color: #00001A;
+   height: 100vh;
+   width: 100%;
+   overflow: hidden;
+   animation: newPageIn 3s ease-in forwards;
+}
+
+.mainWrapper{
+    width: 100%;
+    height: 110vh;
+    animation: newPageIn 2.6s ease-in forwards;
+    box-shadow: inset 0 15px 15px -10px #4E4C6B;
+    overflow: hidden;
+}
+
+.centralWrapper{
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    animation: projectsIn 2s linear forwards 2s;
+    transform: translateY(100vh);
+    position: relative;
+    overflow-y: auto;
+}
+
+@keyframes newPageIn{
+    0%{
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(-110vh);
+    }
+}
+
+@keyframes projectsIn{
+    0%{
+        transform: translateY(100vh);
+    }
+    100%{
+        transform: translateY(0vh);
+    }
+}
