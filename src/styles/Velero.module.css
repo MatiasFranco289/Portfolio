@@ -1,0 +1,135 @@
+:root{
+    --veleroWidth: 90px;
+}
+
+.mainContainer, .mainContainerDisabled{
+    position: absolute;
+    width: var(--veleroWidth);
+    height: fit-content;
+    top: 0;
+    z-index: 20;
+}
+
+.mainContainer{
+    animation: navigate 10s linear forwards;
+}
+
+.mainContainerDisabled{
+    animation: navigateOut 10s linear forwards;
+}
+
+.velero{
+    position: absolute;
+    animation: bounce 2s ease-in-out infinite;
+    animation-direction: reverse;
+}
+
+.veleroInvert{
+    position: absolute;
+    top: 64px;
+    animation: inverseBounce 2s ease-in-out infinite;
+    filter: blur(2px);
+}
+
+.waveWrapper{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 0px;
+    top: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wave1, .wave2, .wave3, .wave4, .wave5, .wave6{
+    width: 100px;
+    height: 100px;
+    box-shadow:inset 10px 0px 30px #aaa6caad;
+    animation: generateWave 3s linear infinite;
+    position: absolute;
+    opacity: 0;
+}
+
+.wave2{
+    animation-delay: 0.75s;
+}
+
+.wave3{
+    animation-delay: 1.5s;
+}
+
+.wave4{
+    animation-delay: 2.25s;
+}
+
+@media(min-width:1024px){
+    :root{
+        --veleroWidth:120px;
+    }
+    .veleroInvert{
+        top: 86px;
+    }
+}
+
+@keyframes generateWave{
+    0%{
+        opacity: 0;
+        transform: translateX(0) rotateX(60deg);
+        border-radius: 100%;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        width: 200px;
+        height: 200px;
+        opacity: 0;
+        transform: translateX(-15%) rotateX(60deg);
+        border-radius: 65% 35% 34% 66% / 50% 50% 50% 50% ;
+    }
+}
+
+@keyframes bounce{
+    0%{
+        transform: translateY(0%);
+    }
+    50%{
+        transform: translateY(4%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+@keyframes inverseBounce{
+    0%{
+        transform: translateY(0%);
+    }
+    50%{
+        transform: translateY(-4%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+
+
+@keyframes navigate{
+    0%{
+        left: -120px;
+    }
+    100%{
+        left: 50vw;
+    }
+}
+
+@keyframes navigateOut{
+    0%{
+        left: 50vw;
+    }
+    100%{
+        left: 120vw;
+    }
+}

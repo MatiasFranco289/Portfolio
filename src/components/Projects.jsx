@@ -4,8 +4,9 @@ import ProjectCard from "./ProjectCard";
 import LaReservaThumbnail from '../imgs/LaReservaThumbnail.png';
 import PokemonThumbnail from '../imgs/PokemonThumbnail.png';
 import {AiOutlineRight, AiOutlineLeft} from 'react-icons/ai';
+import RayLight from "./RayLight";
 
-export default function Projects(){
+export default function Projects({unLoading}){
     const [actualCard, setActualCard] = useState(0);
     
     const descriptions = [
@@ -46,22 +47,27 @@ export default function Projects(){
         setActualCard(actualCard - 1);
     }
 
-    return(
-    <div className="bg-ska1 w-screen h-screen overflow-hidden">
 
-        <div className={styles.oldPage}>
+    return(
+    <div className="bg-ska1 w-screen h-screen relative overflow-hidden">
+
+        <div className={!unLoading?styles.oldPage:styles.oldPageDisabled}>
             <div className="h-4/6 w-full flex flex-col flex-nowrap justify-between 
             flex-wrap relative md:flex-row overflow-hidden min-h-[262px] shadow-lg 
             shadow-ska7 z-10 mt-[80px]"/>
         </div>
         
-        <div className={styles.mainWrapper}>
-            <div className={styles.centralWrapper}>
-                
-                <div className="h-screen absolute bottom-0 flex justify-center items-center">
+        <div className={!unLoading?styles.mainWrapper:styles.mainWrapperDisabled}>
+            <div className={!unLoading?styles.centralWrapper:styles.centralWrapperDisabled}>
 
+                <div className="h-screen bottom-0 flex flex-col justify-center items-center">
+
+                    <div className="min-h-[100px]"></div>
+
+                    <div className="flex">
+                        
                     <button className={`text-4xl ${actualCard<=0?'text-ska9':'text-white'} 
-                    ${actualCard<=0?'pointer-events-none':'pointer-events-all'}`} 
+                    ${actualCard<=0?'pointer-events-none':'pointer-events-all'} min-w-[36px]`} 
                     onClick={() => previousCard()}>
                         <AiOutlineLeft/>
                     </button>
@@ -69,13 +75,29 @@ export default function Projects(){
                     {cards[actualCard]}
 
                     <button className={`text-4xl ${actualCard >= cards.length-1?'text-ska9':'text-white'}
-                    ${actualCard >= cards.length-1?'pointer-events-none':'pointer-events-all'}`}>
+                    ${actualCard >= cards.length-1?'pointer-events-none':'pointer-events-all'} min-w-[36px]`}>
                         <AiOutlineRight onClick={() => nextCard()}/>
                     </button>
+                    </div>
                 </div>
             
             </div>
         </div>
+
+        <div className={`${!unLoading?'opacity-1':'opacity-0'} duration-1000`}>
+        <RayLight left={1} rotation={5}/>
+        <RayLight left={20} rotation={5} />
+
+        <RayLight left={49} rotation={2} />
+        <RayLight left={65} rotation={-10}/>
+
+        <RayLight left={80} rotation={-15} />
+        </div>
+        
+
+
+
+
     </div>
         
     )

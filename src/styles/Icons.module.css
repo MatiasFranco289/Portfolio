@@ -27,7 +27,6 @@
 .invertedIconsContainer{
     top: 0;
     transform: scaleY(-100%);
-    filter: blur(3px);
     animation: fallUp 1s ease-in forwards;
     animation-delay: 4s;
 }
@@ -35,7 +34,6 @@
 .invertedIconsContainerDisabled{
     top: 0;
     opacity: 1;
-    filter: blur(3px);
     transform: scaleY(-100%);
     pointer-events: none;
     animation: iconsOutInverted .5s ease-out forwards;

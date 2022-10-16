@@ -17,12 +17,19 @@ module.exports = {
       },
       animation: {
         appear: 'appear 2s ease-in-out forwards 5s',
+        appearMedium: 'appear 2s ease-in-out forwards 3s',
+        disappearMedium: 'disappear 2s ease-in-out forwards 3s'
       },
       keyframes: {
         appear: {
           from: {opacity: 0},
           to: {
           opacity: 1}
+        },
+        disappear: {
+          from: {opacity: 1},
+          to: {
+          opacity: 0}
         }
       }
     },

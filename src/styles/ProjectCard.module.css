@@ -4,7 +4,7 @@
     flex-direction: column;
     width: 100%;
     justify-content: space-between;
-    margin-top: 200px;
+    margin-top: 300px;
     margin-bottom: 0.75rem;
     padding: .75rem;
     border-radius: 0.5rem;
@@ -17,7 +17,7 @@
     animation-play-state: paused;
 }
 
-@media(min-height:700px){
+@media(min-height:741px){
     .mainCard{
         margin-top: 0.75rem;
     }
@@ -32,7 +32,7 @@
 @media(min-width:1024px){
     .mainCard{
         flex-direction: row;
-        width: 1000px;
+        width: 950px;
     }
 }
 

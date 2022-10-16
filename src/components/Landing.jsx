@@ -32,8 +32,8 @@ export default function Landing({unLoading}){
                     onMouseEnter={() => setActiveIcon(0)} 
                     onMouseLeave={() => setActiveIcon(4)}/>
                 </a>
-                
-                <a href="" target='_blank'>
+
+                <a href="mailto:email@example.com">
                     <AiOutlineMail className={`mr-3 duration-300 ${activeIcon==1?'scale-[1.2]':'scale-100'}`}
                     onMouseEnter={() => setActiveIcon(1)} 
                     onMouseLeave={() => setActiveIcon(4)}/>
@@ -62,9 +62,9 @@ export default function Landing({unLoading}){
             </div>
 
             <div className={!unLoading?iconStyles.invertedIconsContainer:iconStyles.invertedIconsContainerDisabled}>
-                <BsGithub className={`mr-3 duration-300 ${activeIcon==0?'scale-[1.2]':'scale-100'}`}/>
-                <AiOutlineMail className={`mr-3 duration-300 ${activeIcon==1?'scale-[1.2]':'scale-100'}`}/>
-                <BsLinkedin className={`mr-3 duration-300 ${activeIcon==2?'scale-[1.2]':'scale-100'}`}/>
+                <BsGithub className={`mr-3 duration-300 ${activeIcon==0?'scale-[1.2]':'scale-100'} blur-[3px]`}/>
+                <AiOutlineMail className={`mr-3 duration-300 ${activeIcon==1?'scale-[1.2]':'scale-100'} blur-[3px]`}/>
+                <BsLinkedin className={`mr-3 duration-300 ${activeIcon==2?'scale-[1.2]':'scale-100'} blur-[3px]`}/>
 
                 <div className={styles.waveWrapper}>
                     <div className={styles.wave1}/>
