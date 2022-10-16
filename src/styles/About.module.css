@@ -1,0 +1,12 @@
+.btnContainer{
+    animation: appear 2s ease-in forwards;
+}
+
+@keyframes appear{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

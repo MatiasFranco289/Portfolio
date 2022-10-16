@@ -1,16 +1,24 @@
-import React, {useState } from "react";
+import React, {useEffect, useState } from "react";
 import emailjs from "emailjs-com";
 import {AiOutlineLoading} from 'react-icons/ai';
 import WaterDrop from "./WaterDrop";
 import styles from '../styles/Contact.module.css';
 
-export default function Contact({unLoading}){
+export default function Contact({unLoading, setLoadingRouter}){
     const [inputs, setInputs] = useState({name:'',email:'',msg:''});
     const [errors, setErrors] = useState({name:'',email:'',msg:''})
     const [popUp, setPopUp] = useState({title:'',msg:''});
     const [loading, setLoading] = useState(false);
     const [btnHover, setBtnHover] = useState(false);
     
+    useEffect(() => {
+        setLoadingRouter(true);
+
+        setTimeout(() => {
+            setLoadingRouter(false);
+        },3000)
+    },[]);
+
     function handleFieldChange(e){
         validate(e.target.value, e.target.id);
         setInputs({...inputs, [e.target.id]:e.target.value})
@@ -43,7 +51,6 @@ export default function Contact({unLoading}){
     }
 
     function validateMessage(msg){
-        console.log(msg.length)
         if(!msg.length) return setErrors({...errors, msg: 'Este campo no puede estar vacio.'})
         return setErrors({...errors, msg: ''})
     }

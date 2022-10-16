@@ -8,20 +8,18 @@ import styles from '../styles/ProjectCard.module.css';
 
 export default function ProjectCard({media, title, description, tecnologys, git, deploy, video}){
     const tecnolgysIcons = {
-        'javascript':<DiJavascript1 className="mx-1"/>,
-        'react': <DiReact className="mx-1"/>,
-        'css': <DiCss3 className="mx-1"/>,
-        'redux': <SiRedux className="mx-1"/>,
-        'node': <DiNodejsSmall className="mx-1"/>,
-        'express': <SiExpress className="mx-1"/>,
-        'sequelize': <SiSequelize className="mx-1"/>,
-        'postgres': <SiPostgresql className="mx-1"/>,
-        'auth0': <SiAuth0 className="mx-1"/>,
-        'pasarela': <MdPayment className="mx-1"/>,
-        'socketIo': <SiSocketdotio className="mx-1"/>
+        'javascript':<DiJavascript1 className="mx-1" key='jsI'/>,
+        'react': <DiReact className="mx-1" key='reactI'/>,
+        'css': <DiCss3 className="mx-1" key='cssI'/>,
+        'redux': <SiRedux className="mx-1" key='reduxI'/>,
+        'node': <DiNodejsSmall className="mx-1" key='nodeI'/>,
+        'express': <SiExpress className="mx-1" key='expressI'/>,
+        'sequelize': <SiSequelize className="mx-1" key='sqlzI'/>,
+        'postgres': <SiPostgresql className="mx-1" key='pstgrsI'/>,
+        'auth0': <SiAuth0 className="mx-1" key='auth0I'/>,
+        'pasarela': <MdPayment className="mx-1" key='psrlI'/>,
+        'socketIo': <SiSocketdotio className="mx-1" key='scktI'/>
     }
-
-    console.log(deploy);
 
     return(
         <div className={styles.mainCard}>

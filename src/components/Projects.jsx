@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Projects.module.css";
 import ProjectCard from "./ProjectCard";
 import LaReservaThumbnail from '../imgs/LaReservaThumbnail.png';
@@ -6,7 +6,16 @@ import PokemonThumbnail from '../imgs/PokemonThumbnail.png';
 import {AiOutlineRight, AiOutlineLeft} from 'react-icons/ai';
 import RayLight from "./RayLight";
 
-export default function Projects({unLoading}){
+export default function Projects({unLoading, setLoadingRouter}){
+
+    useEffect(() => {
+        setLoadingRouter(true);
+
+        setTimeout(() => {
+            setLoadingRouter(false);
+        },4000);
+    }, [])
+
     const [actualCard, setActualCard] = useState(0);
     
     const descriptions = [

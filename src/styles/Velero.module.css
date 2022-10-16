@@ -1,5 +1,6 @@
 :root{
     --veleroWidth: 90px;
+    --waveSize: 80px
 }
 
 .mainContainer, .mainContainerDisabled{
@@ -8,20 +9,22 @@
     height: fit-content;
     top: 0;
     z-index: 20;
+    pointer-events: none;
 }
 
 .mainContainer{
-    animation: navigate 10s linear forwards;
+    animation: navigate 10s ease-out forwards;
 }
 
 .mainContainerDisabled{
-    animation: navigateOut 10s linear forwards;
+    animation: navigateOut 8s ease-in forwards;
 }
 
 .velero{
     position: absolute;
     animation: bounce 2s ease-in-out infinite;
     animation-direction: reverse;
+    z-index: 20;
 }
 
 .veleroInvert{
@@ -35,16 +38,17 @@
     position: absolute;
     width: 100px;
     height: 100px;
-    left: 0px;
-    top: 65px;
+    left: -10px;
+    top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 0;
 }
 
 .wave1, .wave2, .wave3, .wave4, .wave5, .wave6{
-    width: 100px;
-    height: 100px;
+    width: var(--waveSize);
+    height: var(--waveSize);
     box-shadow:inset 10px 0px 30px #aaa6caad;
     animation: generateWave 3s linear infinite;
     position: absolute;
@@ -66,26 +70,30 @@
 @media(min-width:1024px){
     :root{
         --veleroWidth:120px;
+        --waveSize:100px;
     }
     .veleroInvert{
         top: 86px;
     }
+    .waveWrapper{
+        top: 65px;
+        left: 5px;
+    }
+
 }
 
 @keyframes generateWave{
     0%{
         opacity: 0;
-        transform: translateX(0) rotateX(60deg);
+        transform: translateX(0) rotateX(60deg) scale(1);
         border-radius: 100%;
     }
     50%{
         opacity: 1;
     }
     100%{
-        width: 200px;
-        height: 200px;
         opacity: 0;
-        transform: translateX(-15%) rotateX(60deg);
+        transform: translateX(-15%) rotateX(60deg) scale(2);
         border-radius: 65% 35% 34% 66% / 50% 50% 50% 50% ;
     }
 }

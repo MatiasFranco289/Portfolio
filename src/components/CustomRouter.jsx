@@ -8,15 +8,16 @@ import About from "../components/About";
 export default function CustomRouter(){
     const [activePage, setActivePage] = useState(3);
     const [unLoading, setUnloading] = useState(false);
-
+    const [loadingRouter, setLoadingRouter] = useState(false);
+    
     function Routing(){
         switch(activePage){
             case 0:
-                return <Landing unLoading={unLoading}/>
+                return <Landing unLoading={unLoading} setLoadingRouter={setLoadingRouter}/>
             case 1:
-                return <Contact unLoading={unLoading}/>
+                return <Contact unLoading={unLoading} setLoadingRouter={setLoadingRouter}/>
             case 2:
-                return <Projects unLoading={unLoading}/>
+                return <Projects unLoading={unLoading} setLoadingRouter={setLoadingRouter}/>
             case 3:
             return <About unLoading={unLoading} setActivePage={setActivePage}/>
         }
@@ -33,15 +34,17 @@ export default function CustomRouter(){
 
     return(
         <div>
-            <div className={`w-full text-xs py-6 font-medium
-            flex flex-row items-center sm:text-2xl sm:px-6 
-            animate-appear absolute top-0 left-0 ${unLoading?
-            'pointer-events-none':null} opacity-0 z-20`}>
+            
+            <div className={styles.mainNav}>
+                <div className={(unLoading || loadingRouter)?styles.navSubDisabled:styles.navSub}>
                 <p className={activePage==0?styles.link_active:styles.link} onClick={() =>handleChange(4000,0)}>Home</p>
                 <p className={activePage==1?styles.link_active:styles.link} onClick={() => handleChange(4000,1)}>Contacto</p>
                 <p className={activePage==2?styles.link_active:styles.link} onClick={() => handleChange(4000,2)}>Proyectos</p>
                 <p className={activePage==3?styles.link_active:styles.link} onClick={() => handleChange(4000,3)}>Sobre mi</p>
+                </div>
             </div>
+
+    
 
             {Routing()}
         </div>

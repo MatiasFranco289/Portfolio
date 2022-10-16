@@ -23,8 +23,7 @@ module.exports = {
       keyframes: {
         appear: {
           from: {opacity: 0},
-          to: {
-          opacity: 1}
+          to: {opacity: 1}
         },
         disappear: {
           from: {opacity: 1},
