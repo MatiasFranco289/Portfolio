@@ -37,7 +37,7 @@ export default function Projects({unLoading, setLoadingRouter}){
         tecnologys={['javascript','react','css','redux','node','express','sequelize','postgres']}
         deploy='https://pokemon289.herokuapp.com'
         git='https://github.com/MatiasFranco289/PI-Pokemon-main'
-        video='https://youtube.com'/>,
+        video='https://www.youtube.com/watch?v=SKm7kD9jIcI'/>,
         <ProjectCard title='La Reserva' media={LaReservaThumbnail} 
         description={descriptions[1]}
         tecnologys={['javascript','react','css','redux','node','express','sequelize','postgres','auth0','socketIo','pasarela']}

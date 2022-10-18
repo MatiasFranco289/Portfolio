@@ -41,9 +41,9 @@ export default function About({unLoading, setActivePage}){
                     {page>0 && page<3?
                     <TypeMe typingSpeed='500' className={`text-center p-3 mb-3 ${page>1?'opacity-0':'opacity-1'} duration-1000`}>
                     <Delay ms={2000}/>
-                    Desde siempre he disfrutado los temas relacionados con la tecnologia.
+                    Desde siempre he disfrutado los temas relacionados con la tecnología.
                     <LineBreak/>
-                    Mi pasion nacio desde muy pequeño, cuando descubri como hacer paginas usando html y un bloc de notas y desde entonces nunca he parado.
+                    Mi pasion nació desde muy pequeño, cuando descubri como hacer páginas usando html y un bloc de notas y desde entonces nunca he parado.
                     </TypeMe>:null}
 
                 </div>
@@ -53,7 +53,7 @@ export default function About({unLoading, setActivePage}){
                     {page>1 && page<4?
                     <TypeMe typingSpeed='500' className={`text-center p-3 mb-3 ${page>2?'opacity-0':'opacity-1'} duration-1000`}>
                     <Delay ms={2000}/>
-                    He creado  infinidad de paginas, modelado en 3D, trabajado en algunos juegos y hasta he creado pequeños robots usando arduino.
+                    He creado  infinidad de páginas, modelado en 3D, trabajado en algunos juegos y hasta he creado pequeños robots usando arduino.
                     <LineBreak/>
                     Todo esto lo he hecho siempre como hobby y aprendiendo por mi cuenta, es por eso que me considero un autodidacta.
                     </TypeMe>:null}
@@ -64,7 +64,7 @@ export default function About({unLoading, setActivePage}){
 
                     {page>2 && page<5?
                     <TypeMe typingSpeed='500' className={`text-center p-3 mb-3 ${page>3?'opacity-0':'opacity-1'} duration-1000`}>
-                    No fue hasta el 2022 que decidi dedicarme a esto de manera profesional y entre en un Bootcamp donde aprendi muchas cosas nuevas e interesantes.
+                    No fue hasta el 2022 que decidí dedicarme a esto de manera profesional y entre en un Bootcamp donde aprendí muchas cosas nuevas e interesantes.
                     </TypeMe>:null}
 
                 </div>
@@ -73,7 +73,7 @@ export default function About({unLoading, setActivePage}){
 
                     {page>3 && page<6?
                     <TypeMe typingSpeed='500' className={`text-center p-3 mb-3 ${page>4?'opacity-0':'opacity-1'} duration-1000`}>
-                    Mi foco principal en estos dias es desarrollar sitios webs unicos y sorprendentes y por eso me mantengo siempre en movimiento y aprendiendo
+                    Mi foco principal en estos días es desarrollar sitios webs únicos y sorprendentes y por eso me mantengo siempre en movimiento y aprendiendo
                     para crear cosas cada vez mejores.
                     </TypeMe>:null}
 
@@ -110,9 +110,9 @@ export default function About({unLoading, setActivePage}){
                     <TypeMe typingSpeed='500' 
                     className={`text-center z-20 text-4xl font-bold scale-y-[-100%] blur-[3px] mt-3 p-3 ${page>1?'opacity-0':'opacity-1'} duration-1000`}>
                     <Delay ms={2000}/>
-                    Desde siempre he disfrutado los temas relacionados con la tecnologia.
+                    Desde siempre he disfrutado los temas relacionados con la tecnología.
                     <LineBreak/>
-                    Mi pasion nacio desde muy pequeño, cuando descubri como hacer paginas usando html y un bloc de notas y desde entonces nunca he parado.
+                    Mi pasion nació desde muy pequeño, cuando descubri como hacer páginas usando html y un bloc de notas y desde entonces nunca he parado.
                     </TypeMe>:null}
                 </div>
 
@@ -121,7 +121,7 @@ export default function About({unLoading, setActivePage}){
                     <TypeMe typingSpeed='500' 
                     className={`text-center z-20 text-4xl font-bold scale-y-[-100%] blur-[3px] mt-3 p-3 ${page>2?'opacity-0':'opacity-1'} duration-1000`}>
                     <Delay ms={2000}/>
-                    He creado  infinidad de paginas, modelado en 3D, trabajado en algunos juegos y hasta he creado pequeños robots usando arduino.
+                    He creado  infinidad de páginas, modelado en 3D, trabajado en algunos juegos y hasta he creado pequeños robots usando arduino.
                     <LineBreak/>
                     Todo esto lo he hecho siempre como hobby y aprendiendo por mi cuenta, es por eso que me considero un autodidacta.
                     </TypeMe>:null}
@@ -131,7 +131,7 @@ export default function About({unLoading, setActivePage}){
                     {page>2 && page<5?
                     <TypeMe typingSpeed='500' 
                     className={`text-center z-20 text-4xl font-bold scale-y-[-100%] blur-[3px] mt-3 p-3 ${page>3?'opacity-0':'opacity-1'} duration-1000`}>
-                    No fue hasta el 2022 que decidi dedicarme a esto de manera profesional y entre en un Bootcamp donde aprendi muchas cosas nuevas e interesantes.
+                    No fue hasta el 2022 que decidí dedicarme a esto de manera profesional y entre en un Bootcamp donde aprendí muchas cosas nuevas e interesantes.
                     </TypeMe>:null}
                 </div>
                 
@@ -139,7 +139,7 @@ export default function About({unLoading, setActivePage}){
                     {page>3 && page<6?
                     <TypeMe typingSpeed='500' 
                     className={`text-center z-20 text-4xl font-bold scale-y-[-100%] blur-[3px] mt-3 p-3 ${page>4?'opacity-0':'opacity-1'} duration-1000`}>
-                    Mi foco principal en estos dias es desarrollar sitios webs unicos y sorprendentes y por eso me mantengo siempre en movimiento y aprendiendo
+                    Mi foco principal en estos días es desarrollar sitios webs únicos y sorprendentes y por eso me mantengo siempre en movimiento y aprendiendo
                     para crear cosas cada vez mejores.
                     </TypeMe>:null}
                 </div>

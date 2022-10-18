@@ -6,7 +6,7 @@ import Projects from "./Projects";
 import About from "../components/About";
 
 export default function CustomRouter(){
-    const [activePage, setActivePage] = useState(3);
+    const [activePage, setActivePage] = useState(0);
     const [unLoading, setUnloading] = useState(false);
     const [loadingRouter, setLoadingRouter] = useState(false);
     
