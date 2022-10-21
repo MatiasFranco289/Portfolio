@@ -43,7 +43,7 @@ export default function Projects({unLoading, setLoadingRouter}){
         tecnologys={['javascript','react','css','redux','node','express','sequelize','postgres','auth0','socketIo','pasarela']}
         deploy='https://lareserva-frontend.herokuapp.com'
         git='https://github.com/CristianLarrauri/LaReserva'
-        video='https://youtube.com/'/>
+        video='https://www.youtube.com/watch?v=Bu6TwkF7WDE'/>
     ]
 
     function nextCard(){
