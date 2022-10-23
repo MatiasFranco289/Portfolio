@@ -42,7 +42,7 @@ export default function RayLight({left, rotation}){
             }
 
             rays.push(
-                <img key={`${f}ray`} src={ray} alt="light.png" className='blur absolute animate-pulse' style={rayStyles}/>
+                <img key={`${f}ray`} src={ray} alt="light.png" className={styles.raylightImg} style={rayStyles}/>
             )
         }
 

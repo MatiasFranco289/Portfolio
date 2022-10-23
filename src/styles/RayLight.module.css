@@ -9,6 +9,12 @@
     animation: appear 2s ease-in-out forwards 3s;
 }
 
+.raylightImg{
+    filter: blur(8px);
+    position: absolute;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 @media(min-width:768px){
     .raylight{
         width: 300px;
@@ -29,4 +35,13 @@
         opacity: 1;
     }
 }
+
+@keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .5;
+    }
+  }
 
