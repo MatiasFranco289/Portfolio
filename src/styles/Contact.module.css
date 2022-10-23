@@ -64,6 +64,18 @@
     animation: wave 2s linear forwards .5s;
 }
 
+.spinner{
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 
 @keyframes wave{
     0%{

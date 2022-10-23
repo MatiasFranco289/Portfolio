@@ -150,10 +150,7 @@ export default function About({unLoading, setActivePage}){
             </div>
 
             <div className={styles.btnContainer}>
-                <button className={`bg-ska5 w-[120px] sm:w-[150px] rounded-full flex justify-center
-                    shadow shadow-ska1 animate-bounce absolute right-auto md:right-0 md:top-[60px] text-4xl top-[30px]
-                    ${(page>=5 || unLoading)?'opacity-0':'opacity-1'} ${page>=5?'pointer-events-none':
-                    'pointer-events-all'} duration-500`}
+                <button className={(page>=5 || unLoading)?styles.btnInactive:styles.btnActive}
                     onClick={() => nextPage()}>
                     <BiSkipNext className="text-white"/>
                 </button>

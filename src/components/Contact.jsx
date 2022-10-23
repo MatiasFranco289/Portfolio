@@ -191,7 +191,7 @@ export default function Contact({unLoading, setLoadingRouter}){
                             ${!loading?'pointer-events-auto':'pointer-events-none'} duration-300`}
                             onMouseEnter={() => setBtnHover(true)}
                             onMouseLeave={() => setBtnHover(false)}>
-                                {!loading?'Enviar':<AiOutlineLoading className="animate-spin"/>}
+                                {!loading?'Enviar':<AiOutlineLoading className={styles.spinner}/>}
                             </button>
                         </div>
                     </div>
@@ -271,7 +271,7 @@ export default function Contact({unLoading, setLoadingRouter}){
                             shadow-ska1 ${!loading?'shadow':null}
                             ${!loading?'bg-ska1':'bg-transparent'} flex justify-center
                             pointer-events-none duration-300`}>
-                                {!loading?'Enviar':<AiOutlineLoading className="animate-spin"/>}
+                                {!loading?'Enviar':<AiOutlineLoading className={styles.spinner}/>}
                             </button>
                         </div>
                     </div>
