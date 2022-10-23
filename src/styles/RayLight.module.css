@@ -1,0 +1,32 @@
+.raylight{
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    animation: appear 2s ease-in-out forwards 3s;
+}
+
+@media(min-width:768px){
+    .raylight{
+        width: 300px;
+    }
+}
+
+@media(min-width:1024px){
+    .raylight{
+        width: 400px;
+    }
+}
+
+@keyframes appear{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+

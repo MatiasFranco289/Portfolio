@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from 'react';
 import ray from '../imgs/ray.png';
+import styles from '../styles/RayLight.module.css';
 
 export default function RayLight({left, rotation}){
     const [rays, setRays] = useState([]);
@@ -46,8 +47,7 @@ export default function RayLight({left, rotation}){
         }
 
         return(
-            <div className={`absolute w-[200px] md:w-[300px] lg:w-[400px] h-full flex justify-center 
-            pointer-events-none opacity-0 animate-appearMedium`} 
+            <div className={styles.raylight} 
             style={{
             left:`${left}%`,
             top:`${randomBetween(-20,0)}%`,
