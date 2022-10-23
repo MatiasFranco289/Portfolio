@@ -47,11 +47,8 @@ export default function RayLight({left, rotation}){
 
         return(
             <div className={`absolute w-[200px] md:w-[300px] lg:w-[400px] h-full flex justify-center 
-            pointer-events-none opacity-0 animate-appearMedium`} 
-            style={{
-            left:`${left}%`,
-            top:`${randomBetween(-20,0)}%`,
-            transform:`rotateZ(${rotation}deg)`}}>
+            pointer-events-none opacity-0 animate-appearMedium top-0`} 
+            >
             {rays.map(ray => {return ray})}
 
             </div>
