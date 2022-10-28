@@ -1,9 +1,9 @@
 import React from "react";
 import {BsLink, BsGithub} from 'react-icons/bs';
 import {DiReact, DiJavascript1, DiCss3, DiNodejsSmall, } from 'react-icons/di';
-import {SiRedux, SiExpress, SiSequelize, SiPostgresql, SiAuth0, SiSocketdotio} from 'react-icons/si';
+import {SiRedux, SiExpress, SiSequelize, SiPostgresql, SiAuth0, SiSocketdotio, SiPhp, SiBootstrap} from 'react-icons/si';
 import {MdPayment} from 'react-icons/md';
-import {AiFillYoutube} from 'react-icons/ai';
+import {AiFillYoutube, AiOutlineConsoleSql} from 'react-icons/ai';
 import styles from '../styles/ProjectCard.module.css';
 
 export default function ProjectCard({media, title, description, tecnologys, git, deploy, video}){
@@ -18,7 +18,10 @@ export default function ProjectCard({media, title, description, tecnologys, git,
         'postgres': <SiPostgresql className="mx-1" key='pstgrsI'/>,
         'auth0': <SiAuth0 className="mx-1" key='auth0I'/>,
         'pasarela': <MdPayment className="mx-1" key='psrlI'/>,
-        'socketIo': <SiSocketdotio className="mx-1" key='scktI'/>
+        'socketIo': <SiSocketdotio className="mx-1" key='scktI'/>,
+        'php': <SiPhp className="mx-1" key='phpI'/>,
+        'sql': <AiOutlineConsoleSql className="mx-1" key='sqlI'/>,
+        'bootstrap': <SiBootstrap className="mx-1" key="bstrpI"/>
     }
 
     return(
@@ -57,9 +60,10 @@ export default function ProjectCard({media, title, description, tecnologys, git,
                             <BsGithub className="mx-2 duration-300 hover:scale-125"/>
                         </a>
 
+                        {video!=='' &&
                         <a href={video} target='_blank'>
-                            <AiFillYoutube className="mx-2 duration-300 hover:scale-125"/>
-                        </a>
+                        <AiFillYoutube className="mx-2 duration-300 hover:scale-125"/>
+                        </a>}
                     </div>
 
                     <div className="flex text-xl sm:text-4xl flex-wrap sm:ml-6">
