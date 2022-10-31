@@ -4,6 +4,7 @@ import ProjectCard from "./ProjectCard";
 import LaReservaThumbnail from '../imgs/LaReservaThumbnail.png';
 import PokemonThumbnail from '../imgs/PokemonThumbnail.png';
 import EquipamientosThumbnail from '../imgs/EquipamientoEsperanzaThumbnail.png';
+import MistApiThumbnail from '../imgs/MistApiThumbnail.png';
 import {AiOutlineRight, AiOutlineLeft} from 'react-icons/ai';
 import RayLight from "./RayLight";
 
@@ -31,7 +32,8 @@ export default function Projects({unLoading, setLoadingRouter}){
         Por parte de los administradores, la web permite modificar diversos datos sobre torneos, eliminar o inhabilitar los mismos asi como crear nuevos,\
         banear usuarios y gestionar las reviews de los mismos.",
         'Equipamientos Esperanza es un sitio web creado como  una plantilla para un E-Commerce construido \
-        utilizando principalmente PHP y SQL.'
+        utilizando principalmente PHP y SQL.',
+        'Esto es una RESTful API creada con Node, Express y Mysql orientada a Mistborn era 1; Una serie de libros escritos por el autor estadounidense Brandon Sanderson.'
     ]
 
     const cards = [
@@ -52,6 +54,12 @@ export default function Projects({unLoading, setLoadingRouter}){
         tecnologys={['php','javascript','css','bootstrap','sql']}
         deploy='https://equipamientos-esperanza.000webhostapp.com'
         git='https://github.com/MatiasFranco289/Equipamientos-esperanza'
+        video=''/>,
+        <ProjectCard title='Mist API' media={MistApiThumbnail}
+        description={descriptions[3]}
+        tecnologys={['javascript','node','express','auth0','sql','css']}
+        deploy='https://mistborn-api-production.up.railway.app/'
+        git='https://github.com/MatiasFranco289/Mistborn-API'
         video=''/>
     ]
 
